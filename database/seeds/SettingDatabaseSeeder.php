@@ -27,10 +27,10 @@ class SettingDatabaseSeeder extends Seeder
 
             'translatable' =>
                 [
-                'store_name' => 'Elshrqaw Store',
-                'free_shipping_label' => 'free shipping',
-                'local_label' => 'local shipping',
-                'outer_label' => 'outer shipping',
+                'store_name' => 'متجر الشرقاوي',
+                'free_shipping_label' => 'توصيل مجاني',
+                'local_label' => 'توصيل داخلي',
+                'outer_label' => 'توصيل خارجي',
                 ],
 
         ]);
