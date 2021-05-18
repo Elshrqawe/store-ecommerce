@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+@section('title','تعديل وسيلة التوصيل ')
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-header row">

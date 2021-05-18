@@ -19,6 +19,8 @@ class SettingsController extends Controller
         elseif ($type == 'inner')
             $shippingMethod = Setting::where('key', 'local_label')->first();
 
+
+
         elseif ($type == 'outer')
             $shippingMethod = Setting::where('key', 'outer_label')->first();
 
