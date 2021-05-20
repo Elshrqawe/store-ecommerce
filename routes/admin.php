@@ -15,25 +15,42 @@ use Illuminate\Support\Facades\Route;
 
 // prefix => admin  Ali Root is complete
 
+
+//-------------------------------------LaravelLocalization-------------------------------------//
+
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
 
+    //-------------------------------------auth admin-------------------------------------//
+
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
 
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 
-        Route::get('logout','LoginController@logout')->name('admin.logout');
+        Route::get('logout', 'LoginController@logout')->name('admin.logout');
+
+        //-------------------------------------settings admin-------------------------------------//
+
 
         Route::group(['prefix' => 'settings'], function () {
 
             Route::get('shipping-methods/{type}', 'SettingsController@editShippingMethods')->name('edit.shipping.methods');
             Route::put('shipping-methods/{id}', 'SettingsController@updateShippingMethods')->name('update.shippings.methods');
+        });
 
+        //-------------------------------------settings profile admin-------------------------------------//
+
+        Route::group(['prefix' => 'profile'], function () {
+
+            Route::get('edit', 'ProfileController@editProfile')->name('edit.Profile');
+            Route::put('update', 'ProfileController@updateProfile')->name('update.profile');
+           // Route::put('update/password', 'ProfileController@updatepassword')->name('update.Profile.password');
         });
     });
 
+    //-------------------------------------guest admin-------------------------------------//
 
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin', 'prefix' => 'admin'], function () {
 
