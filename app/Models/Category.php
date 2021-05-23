@@ -48,6 +48,7 @@ class Category extends Model
     }
     public function scopeParentt($query){
         return $query -> with('parent_id');
+
     }
     public function scopeChild($query){
         return $query -> whereNotNull('parent_id');

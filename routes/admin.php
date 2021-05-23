@@ -46,7 +46,7 @@ Route::group([
 
             Route::get('edit', 'ProfileController@editProfile')->name('edit.Profile');
             Route::put('update', 'ProfileController@updateProfile')->name('update.profile');
-           // Route::put('update/password', 'ProfileController@updatepassword')->name('update.Profile.password');
+            // Route::put('update/password', 'ProfileController@updatepassword')->name('update.Profile.password');
         });
 
         //-------------------------------------categories routes-------------------------------------//
@@ -70,6 +70,21 @@ Route::group([
             Route::get('edit/{id}', 'SubCategoriesController@edit')->name('admin.subcategories.edit');
             Route::post('update/{id}', 'SubCategoriesController@update')->name('admin.subcategories.update');
             Route::get('delete/{id}', 'SubCategoriesController@destroy')->name('admin.subcategories.delete');
+        });
+
+        //-------------------------------------brands routes resource-------------------------------------//
+
+        Route::group(['prefix' => 'brands'], function () {
+
+            Route::resource('/', 'BrandsController');
+
+
+//            Route::get('/', 'BrandsController@index')->name('admin.subcategories');
+//            Route::get('create', 'BrandsController@create')->name('admin.subcategories.create');
+//            Route::post('store', 'BrandsController@store')->name('admin.subcategories.store');
+//            Route::get('edit/{id}', 'BrandsController@edit')->name('admin.subcategories.edit');
+//            Route::post('update/{id}', 'BrandsController@update')->name('admin.subcategories.update');
+//            Route::get('delete/{id}', 'BrandsController@destroy')->name('admin.subcategories.delete');
         });
 
     });
