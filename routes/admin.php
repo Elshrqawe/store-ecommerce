@@ -78,14 +78,31 @@ Route::group([
 
             Route::resource('/', 'BrandsController');
 
-
-//            Route::get('/', 'BrandsController@index')->name('admin.subcategories');
-//            Route::get('create', 'BrandsController@create')->name('admin.subcategories.create');
-//            Route::post('store', 'BrandsController@store')->name('admin.subcategories.store');
-//            Route::get('edit/{id}', 'BrandsController@edit')->name('admin.subcategories.edit');
-//            Route::post('update/{id}', 'BrandsController@update')->name('admin.subcategories.update');
-//            Route::get('delete/{id}', 'BrandsController@destroy')->name('admin.subcategories.delete');
+//            Route::get('/', 'BrandsController@index')->name('admin.brand');
+//            Route::get('create', 'BrandsController@create')->name('admin.brand.create');
+//            Route::post('store', 'BrandsController@store')->name('admin.brand.store');
+            Route::get('edit/{id}', 'BrandsController@edit')->name('admin.brand.edit');
+            Route::post('update/{id}', 'BrandsController@update')->name('admin.brand.update');
+            Route::get('delete/{id}', 'BrandsController@destroy')->name('admin.brand.delete');
         });
+
+        //-------------------------------------Tags routes-------------------------------------//
+
+//        Route::resource('tags', 'TagsController');
+//        Route::post('update/{id}', 'BrandsController@update')->name('admin.tags.update');
+//        Route::get('delete/{id}', 'BrandsController@destroy')->name('admin.tags.delete');
+        ################################## Tags routes ######################################
+        Route::group(['prefix' => 'tags'], function () {
+            Route::get('/','TagsController@index') -> name('admin.tags');
+            Route::get('create','TagsController@create') -> name('admin.tags.create');
+            Route::post('store','TagsController@store') -> name('admin.tags.store');
+            Route::get('edit/{id}','TagsController@edit') -> name('admin.tags.edit');
+            Route::post('update/{id}','TagsController@update') -> name('admin.tags.update');
+            Route::get('delete/{id}','TagsController@destroy') -> name('admin.tags.delete');
+        });
+        ################################## end brands    #######################################
+
+
 
     });
 

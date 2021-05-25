@@ -25,7 +25,21 @@ class MainCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'type' => 'required|in:1,2',
             'slug' => 'required|unique:categories,slug,'.$this -> id
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'يجب ادخال هذ الحقل *',
+            'slug.required' => 'يجب ادخال هذ الحقل *',
+            'slug.unique' => 'هذ الرابط موجود بلفعل *',
+            'type.required' => 'يجب ادخال هذ الحقل (type) *',
+
+
+
         ];
     }
 

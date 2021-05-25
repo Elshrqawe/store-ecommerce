@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BrandRequest extends FormRequest
+class TagsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,20 +25,16 @@ class BrandRequest extends FormRequest
     {
         return [
             'name' => 'required',
-           // 'slug' => 'required|unique:categories,slug,'.$this -> id
-            'photo' => 'required_without:id|mimes:jpg,jpeg,png'
+            'slug' => 'required|unique:tags,slug,'.$this -> id
         ];
     }
-
 
     public function messages()
     {
         return [
-            'name.required' => 'يجب ادخال هذ الحقل *',
-            'photo.required' => 'يجب ادخال هذ الحقل *',
-            'photo.mimes' => 'يجب ان تكون صوره من نوع (jpg او jpeg او png)',
-
-
+            'name.required' => 'لايمكن ترك هذه الخانه فارغه ☺',
+            'slug.required' => 'لايمكن ترك هذه الخانه فارغه ☺',
+            'slug.unique' => 'هذ الرابط موجود بلفعل ☹',
         ];
     }
 
