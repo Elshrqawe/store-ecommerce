@@ -9,9 +9,14 @@ function getFolder()
 }
 
 
-function uploadImage($folder,$image){
+function uploadImage($folder, $image)
+{
     $image->store('/', $folder);
     $filename = $image->hashName();
-    return  $filename;
+    return $filename;
 }
+
+
+
+
 

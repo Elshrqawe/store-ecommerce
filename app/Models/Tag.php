@@ -34,5 +34,8 @@ class Tag extends Model
     protected $hidden = ['translations'];
 
 
+    public function scopeActive($query){
+        return $query ->select('id')->get();
+    }
 
 }
