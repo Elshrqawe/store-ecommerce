@@ -35,7 +35,7 @@ class BrandRequest extends FormRequest
     {
         return [
             'name.required' => 'يجب ادخال هذ الحقل *',
-            'photo.required' => 'يجب ادخال هذ الحقل *',
+            'photo.required_without' => 'يجب ادخال هذ الحقل * ',
             'photo.mimes' => 'يجب ان تكون صوره من نوع (jpg او jpeg او png)',
 
 

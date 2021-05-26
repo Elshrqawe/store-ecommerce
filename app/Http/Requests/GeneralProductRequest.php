@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Enumerations\CategoryType;
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainCategoryRequest extends FormRequest
+class GeneralProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,14 +25,15 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'slug' => 'required|unique:categories,slug,' . $this->id,
-            array
-            (
-                [
-                    'type' => 'required|in:' .CategoryType::mainCategory, CategoryType::supCategory,
-                ]
-            ),
+            'name' => 'required|max:100',
+            'slug' => 'required|unique:products,slug',
+            'description' => 'required|max:1000',
+            'short_description' => 'nullable|max:500',
+            'categories' => 'array|min:1', //[]
+            'categories.*' => 'numeric|exists:categories,id',
+            'tags' => 'nullable',
+            'brand_id' => 'required|exists:brands,id'
+
         ];
     }
 
@@ -40,9 +41,12 @@ class MainCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'يجب ادخال هذ الحقل *',
+            'categories.required' => 'يجب ادخال هذ الحقل *',
+            'name.max' => 'لايمكن ادخال اكثر من 100 حرف',
             'slug.required' => 'يجب ادخال هذ الحقل *',
             'slug.unique' => 'هذ الرابط موجود بلفعل *',
-            'type.required' => 'يجب ادخال هذ الحقل (type) *',
+            'description.required' => 'يجب ادخال هذ الحقل  *',
+            'brand_id.required' => 'يجب ادخال هذ الحقل  *',
 
 
         ];
