@@ -44,7 +44,7 @@
     "[keyword :>]", "[keyword <:]", "[keyword <:>]"
   );
 
-  MT("within an attribute list, attributes classify as attribute",
+  MT("within an attribute list,attributes classify as attribute",
     "[bracket [[][attribute label]",
     "[attribute id]","[attribute url]","[attribute idurl]",
     "[attribute linecolor]","[attribute linecolour]","[attribute textcolor]","[attribute textcolour]","[attribute textbgcolor]","[attribute textbgcolour]",
@@ -52,7 +52,7 @@
     "[attribute arcskip][bracket ]]]"
   );
 
-  MT("outside an attribute list, attributes classify as base",
+  MT("outside an attribute list,attributes classify as base",
     "[base label]",
     "[base id]","[base url]","[base idurl]",
     "[base linecolor]","[base linecolour]","[base textcolor]","[base textcolour]","[base textbgcolor]","[base textbgcolour]",

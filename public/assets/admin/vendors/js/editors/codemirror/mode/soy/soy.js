@@ -60,8 +60,8 @@
       copyState: function(state) {
         return {
           tag: state.tag, // Last seen Soy tag.
-          kind: state.kind.concat([]), // Values of kind="" attributes.
-          kindTag: state.kindTag.concat([]), // Opened tags with kind="" attributes.
+          kind: state.kind.concat([]), // Values of kind=""attributes.
+          kindTag: state.kindTag.concat([]), // Opened tags with kind=""attributes.
           soyState: state.soyState.concat([]),
           indent: state.indent, // Indentation of the following line.
           localMode: state.localMode,

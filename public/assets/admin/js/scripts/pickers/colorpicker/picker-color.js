@@ -20,7 +20,7 @@
 		//  $(selector).minicolors();
 		//
 		// The way I've done it below is just for the demo, so don't get confused
-		// by it. Also, data- attributes aren't supported at this time...they're
+		// by it. Also, data-attributes aren't supported at this time...they're
 		// only used for this demo.
 		//
 		$(this).minicolors({

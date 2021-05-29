@@ -57,8 +57,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اسم  المنتج
-                                                            </label>
+                                                            <label for="projectinput1" > اسم  المنتج </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
@@ -93,6 +92,7 @@
                                                             </label>
                                                             <textarea  name="description" id="description"
                                                                        class="form-control"
+
                                                                        placeholder="  "
                                                             >{{old('description')}}</textarea>
 
@@ -208,7 +208,7 @@
                                                     <i class="ft-x"></i> تراجع
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> التالي ->
                                                 </button>
                                             </div>
                                         </form>
@@ -223,6 +223,8 @@
             </div>
         </div>
     </div>
+
+
 
 @stop
 

@@ -82,7 +82,7 @@
 
 			target[fragments[fragments.length - 1]] = modules[id];
 		}
-		
+
 		// Expose private modules for unit tests
 		if (exports.AMDLC_TESTS) {
 			privateModules = exports.privateModules || {};
@@ -12656,7 +12656,7 @@ define("tinymce/html/SaxParser", [
 				name = name.toLowerCase();
 				value = name in fillAttrsMap ? name : decode(value || val2 || val3 || ''); // Handle boolean attribute than value attribute
 
-				// Validate name and value pass through all data- attributes
+				// Validate name and value pass through all data-attributes
 				if (validate && !isInternalElement && name.indexOf('data-') !== 0) {
 					attrRule = validAttributesMap[name];
 
@@ -19742,7 +19742,7 @@ define("tinymce/Formatter", [
 				for (i = 0; i < formatList.length; i++) {
 					format = formatList[i];
 
-					// Name name, attributes, styles and classes
+					// Name name,attributes, styles and classes
 					if (matchName(node, format) && matchItems(node, format, 'attributes') && matchItems(node, format, 'styles')) {
 						// Match classes
 						if ((classes = format.classes)) {

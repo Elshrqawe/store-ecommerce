@@ -4985,7 +4985,7 @@ S2.define('select2/options',[
       if (this.options.debug && window.console && console.warn) {
         console.warn(
           'Select2: The `data-select2-tags` attribute has been changed to ' +
-          'use the `data-data` and `data-tags="true"` attributes and will be ' +
+          'use the `data-data` and `data-tags="true"`attributes and will be ' +
           'removed in future versions of Select2.'
         );
       }
