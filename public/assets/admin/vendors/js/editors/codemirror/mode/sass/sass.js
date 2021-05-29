@@ -328,7 +328,7 @@ CodeMirror.defineMode("sass", function(config) {
         return "operator";
       }
 
-      // attributes
+      //attributes
       if (stream.eatWhile(/[\w-]/)) {
         if(!stream.peek()){
           state.cursorHalf = 0;

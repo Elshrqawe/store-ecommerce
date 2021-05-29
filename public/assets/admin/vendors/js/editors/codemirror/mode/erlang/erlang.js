@@ -118,7 +118,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
       return rval(state,stream,"whitespace");
     }
 
-    // attributes and type specs
+    //attributes and type specs
     if (!peekToken(state) &&
         stream.match(/-\s*[a-zß-öø-ÿ][\wØ-ÞÀ-Öß-öø-ÿ]*/)) {
       if (is_member(stream.current(),typeWords)) {

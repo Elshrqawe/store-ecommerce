@@ -121,7 +121,7 @@ class MainCategoriesController extends Controller
 
             if (!$category)
                 return redirect()->route('admin.maincategories')->with(['error' => 'هذا القسم غير موجود ']);
-
+            $category->deleteTranslations();
             $category->delete();
 
             return redirect()->route('admin.maincategories')->with(['success' => 'تم  الحذف بنجاح']);

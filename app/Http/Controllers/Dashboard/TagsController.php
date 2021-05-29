@@ -103,7 +103,7 @@ class TagsController extends Controller
 
             if (!$tags)
                 return redirect()->route('admin.tags')->with(['error' => 'هذا الماركة غير موجود ']);
-
+            $tags->deleteTranslations();
             $tags->delete();
 
             return redirect()->route('admin.tags')->with(['success' => 'تم  الحذف بنجاح']);
